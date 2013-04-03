@@ -27,7 +27,6 @@ set ruler
 set textwidth=0
 set wrapmargin=0
 if exists("&colorcolumn")
-	highlight ColorColumn ctermbg=darkblue guibg=grey
 	set colorcolumn=+2
 endif
 
@@ -37,26 +36,18 @@ set linebreak
 set wiw=84  " window width. TODO: check if numberwidth+textwidth works somehow
 "set tabstop=4
 
-"" Pretty colours (centralize elsewhere? try to use standards?)
 " Cursor line and column
 set cursorline
 "set cursorcolumn
-highlight clear CursorLine
-highlight CursorLineNr ctermbg=cyan ctermfg=white
 
 " Gutter
 set number
 "set numberwidth=4 " default value
-highlight LineNr guibg=darkgrey ctermbg=darkblue ctermfg=white
 
 " Special, whitespace and such
 set list
-highlight SpecialKey ctermfg=darkgrey
-"autocmd ColorScheme * highlight Whitespace gui=underline ctermbg=NONE guibg=NONE ctermfg=darkgrey guifg=darkgrey
-highlight Whitespace gui=underline ctermbg=NONE guibg=NONE ctermfg=darkgrey guifg=darkgrey
-highlight Whitespace cterm=underline gui=underline ctermbg=NONE guibg=NONE ctermfg=darkgrey guifg=darkgrey
 set listchars=eol:↵,tab:↹→,trail:\ ,extends:>,precedes:<,nbsp:.
-match Whitespace / \+/
+"match Whitespace / \+/
 
 "" Includes and such
 filetype plugin indent on
@@ -81,4 +72,35 @@ autocmd VimEnter * RainbowParenthesesToggle
 autocmd Syntax * RainbowParenthesesLoadRound
 autocmd Syntax * RainbowParenthesesLoadSquare
 autocmd Syntax * RainbowParenthesesLoadBraces
+
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+"" Pretty colours (centralize elsewhere? try to use standards?)
+if exists("&colorcolumn")
+	highlight ColorColumn ctermbg=darkblue guibg=grey
+endif
+highlight clear CursorLine
+highlight CursorLineNr ctermbg=cyan ctermfg=white
+highlight LineNr guibg=darkgrey ctermbg=darkblue ctermfg=white
+highlight SpecialKey ctermfg=darkgrey
+"autocmd ColorScheme * highlight Whitespace gui=underline ctermbg=NONE guibg=NONE ctermfg=darkgrey guifg=darkgrey
+"highlight Whitespace gui=underline ctermbg=NONE guibg=NONE ctermfg=darkgrey guifg=darkgrey
+"highlight Whitespace cterm=underline gui=underline ctermbg=NONE guibg=NONE ctermfg=darkgrey guifg=darkgrey
+
+highlight ObjectOut ctermfg=blue
+match ObjectOut /#<[^>]*>/
 
