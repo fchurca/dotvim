@@ -6,7 +6,7 @@ nmap <C-j> :bprev<CR>
 nmap <C-k> :bnext<CR>
 
 " Misc
-nmap <C-n> :NERDTree<CR>
+nmap <C-n> :NERDTreeToggle<CR>
 nmap <C-h> :nohlsearch<CR>
 
 " Scroll over rows instead of lines
