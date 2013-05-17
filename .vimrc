@@ -22,6 +22,11 @@ set hlsearch
 "" Interface behaviour: output
 " ruler
 set ruler
+" status line:
+"  0: never
+"  1: only if there are at least two windows
+"  2: always
+set laststatus=2
 
 " Avoid automatic linebreaks in new text
 set textwidth=0
@@ -97,6 +102,7 @@ highlight clear CursorLine
 highlight CursorLineNr ctermbg=cyan ctermfg=white
 highlight LineNr guibg=darkgrey ctermbg=darkblue ctermfg=white
 highlight SpecialKey ctermfg=darkgrey
+highlight StatusLine ctermbg=black ctermfg=darkblue
 "autocmd ColorScheme * highlight Whitespace gui=underline ctermbg=NONE guibg=NONE ctermfg=darkgrey guifg=darkgrey
 "highlight Whitespace gui=underline ctermbg=NONE guibg=NONE ctermfg=darkgrey guifg=darkgrey
 "highlight Whitespace cterm=underline gui=underline ctermbg=NONE guibg=NONE ctermfg=darkgrey guifg=darkgrey
