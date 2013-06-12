@@ -10,8 +10,11 @@ set mouse=n
 set clipboard=unnamed " selection (register *)
 "set clipboard=unnamedplus " cut buffer (register +)
 
+let mapleader = ","
+
 " Menu
 set wildmenu
+set wildmode=list:longest
 set cpo-=<
 set wcm=<C-Z>
 
@@ -20,6 +23,7 @@ set incsearch
 set hlsearch
 
 "" Interface behaviour: output
+set scrolloff=3
 " ruler
 set ruler
 " status line:
