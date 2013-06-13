@@ -98,19 +98,30 @@ let g:rbpt_colorpairs = [
 			\ ['darkred',     'DarkOrchid3'],
 			\ ['red',         'firebrick3'],
 			\ ]
+"
 "" Pretty colours (centralize elsewhere? try to use standards?)
-if exists("&colorcolumn")
-	highlight ColorColumn ctermbg=darkblue guibg=grey
+if $USER != 'root'
+	if exists("&colorcolumn")
+		highlight ColorColumn ctermbg=darkblue guibg=grey
+	endif
+	highlight clear CursorLine
+	highlight CursorLineNr ctermbg=cyan ctermfg=white
+	highlight LineNr guibg=darkgrey ctermbg=darkblue ctermfg=white
+	highlight SpecialKey ctermfg=darkgrey
+	highlight StatusLine ctermbg=white ctermfg=darkblue
+else
+	if exists("&colorcolumn")
+		highlight ColorColumn ctermbg=darkred guibg=grey
+	endif
+	highlight clear CursorLine
+	highlight CursorLineNr ctermbg=red ctermfg=white
+	highlight LineNr guibg=darkgrey ctermbg=red ctermfg=black
+	highlight SpecialKey ctermfg=darkgrey
+	highlight StatusLine ctermbg=white ctermfg=darkred
 endif
-highlight clear CursorLine
-highlight CursorLineNr ctermbg=cyan ctermfg=white
-highlight LineNr guibg=darkgrey ctermbg=darkblue ctermfg=white
-highlight SpecialKey ctermfg=darkgrey
-highlight StatusLine ctermbg=white ctermfg=darkblue
 "autocmd ColorScheme * highlight Whitespace gui=underline ctermbg=NONE guibg=NONE ctermfg=darkgrey guifg=darkgrey
 "highlight Whitespace gui=underline ctermbg=NONE guibg=NONE ctermfg=darkgrey guifg=darkgrey
 "highlight Whitespace cterm=underline gui=underline ctermbg=NONE guibg=NONE ctermfg=darkgrey guifg=darkgrey
 
 highlight ObjectOut ctermfg=blue
 match ObjectOut /#<[^>]*>/
-
