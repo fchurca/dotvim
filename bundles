@@ -1,0 +1,6 @@
+vundle
+slimv.vim
+paredit.vim
+vcscommand.vim
+kien/rainbow_parentheses.vim
+scrooloose/nerdtree

@@ -14,7 +14,6 @@ let mapleader = ","
 
 " Menu
 set wildmenu
-set wildmode=list:longest
 set cpo-=<
 set wcm=<C-Z>
 
@@ -71,7 +70,13 @@ if isdirectory($HOME."/.vim")
 	if isdirectory($HOMEVIM."/bundle")
 		set rtp+=$HOMEVIM/bundle/vundle/
 		call vundle#rc()
-		source $HOMEVIM/bundles.vim
+		let $BUNDLES=$HOMEVIM.'/bundles'
+		if filereadable($BUNDLES)
+			for line in readfile($BUNDLES)
+				Bundle line
+			endfor
+		endif
+		"source $HOMEVIM/bundles.vim
 	endif
 endif
 
