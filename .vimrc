@@ -49,7 +49,8 @@ set cursorline
 "set cursorcolumn
 
 " Gutter
-set number
+set relativenumber
+"set number
 "set numberwidth=4 " default value
 
 " Special, whitespace and such
