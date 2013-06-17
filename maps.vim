@@ -9,8 +9,11 @@ nmap <C-k> :bnext<CR>
 nmap <C-n> :NERDTreeToggle<CR>
 nmap <C-h> :nohlsearch<CR>
 
-" Scroll over rows instead of lines
+" Lazy :
 nnoremap ; :
+nnoremap ñ :
+
+" Scroll over rows instead of lines
 noremap k gk
 noremap j gj
 noremap <Up> gk
