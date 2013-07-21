@@ -129,5 +129,3 @@ endif
 "highlight Whitespace gui=underline ctermbg=NONE guibg=NONE ctermfg=darkgrey guifg=darkgrey
 "highlight Whitespace cterm=underline gui=underline ctermbg=NONE guibg=NONE ctermfg=darkgrey guifg=darkgrey
 
-highlight ObjectOut ctermfg=blue
-match ObjectOut /#<[^>]*>/
