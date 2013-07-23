@@ -22,7 +22,7 @@ set incsearch
 set hlsearch
 
 "" Interface behaviour: output
-set scrolloff=3
+"set scrolloff=3
 " ruler
 set ruler
 " status line:
