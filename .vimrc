@@ -21,6 +21,10 @@ set wcm=<C-Z>
 set incsearch
 set hlsearch
 
+" Buffers
+set hidden  " Any buffer can be hidden without first writing
+set confirm " On abandoning buffer, Vim will ask whether to save changes
+
 "" Interface behaviour: output
 "set scrolloff=3
 " ruler

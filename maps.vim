@@ -2,7 +2,7 @@
 nmap <F10> :emenu <C-Z>
 
 " Control buffers
-nmap <C-l> :BufExplorer<CR>
+"nmap <C-l> :TBEMinimal<CR>
 nmap <C-j> :bprev<CR>
 nmap <C-k> :bnext<CR>
 
