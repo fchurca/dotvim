@@ -25,6 +25,11 @@ set hlsearch
 set hidden  " Any buffer can be hidden without first writing
 set confirm " On abandoning buffer, Vim will ask whether to save changes
 
+" SuperTab
+let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabMappingForward = '<c-space>'
+let g:SuperTabMappingBackward = '<s-c-space>'
+
 "" Interface behaviour: output
 "set scrolloff=3
 " ruler
@@ -118,7 +123,7 @@ if $USER != 'root'
 	highlight CursorLineNr ctermbg=cyan ctermfg=white
 	highlight LineNr guibg=darkgrey ctermbg=darkblue ctermfg=white
 	highlight SpecialKey ctermfg=darkgrey
-	highlight StatusLine ctermbg=white ctermfg=darkblue
+	highlight StatusLine ctermbg=white ctermfg=lightblue
 else
 	if exists("&colorcolumn")
 		highlight ColorColumn ctermbg=darkred guibg=grey
@@ -133,3 +138,43 @@ endif
 "highlight Whitespace gui=underline ctermbg=NONE guibg=NONE ctermfg=darkgrey guifg=darkgrey
 "highlight Whitespace cterm=underline gui=underline ctermbg=NONE guibg=NONE ctermfg=darkgrey guifg=darkgrey
 
+" Search for visual selection
+
+" Escape special characters in a string for exact matching.
+" This is useful to copying strings from the file to the search tool
+" Based on this - http://peterodding.com/code/vim/profile/autoload/xolox/escape.vim
+function! EscapeString (string)
+  let string=a:string
+  " Escape regex characters
+  let string = escape(string, '^$.*\/~[]')
+  " Escape the line endings
+  let string = substitute(string, '\n', '\\n', 'g')
+  return string
+endfunction
+
+" Get the current visual block for search and replaces
+" This function passed the visual block through a string escape function
+" Based on this - http://stackoverflow.com/questions/676600/vim-replace-selected-text/677918#677918
+function! GetVisual() range
+  " Save the current register and clipboard
+  let reg_save = getreg('"')
+  let regtype_save = getregtype('"')
+  let cb_save = &clipboard
+  set clipboard&
+
+  " Put the current visual selection in the " register
+  normal! ""gvy
+  let selection = getreg('"')
+
+  " Put the saved registers and clipboards back
+  call setreg('"', reg_save, regtype_save)
+  let &clipboard = cb_save
+
+  "Escape any special characters in the selection
+  let escaped_selection = EscapeString(selection)
+
+  return escaped_selection
+endfunction
+
+" Start the find and replace command across the entire file
+vmap <leader>z <Esc>:%s/<c-r>=GetVisual()<cr>/
