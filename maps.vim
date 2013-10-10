@@ -20,3 +20,5 @@ noremap j gj
 noremap <Up> gk
 noremap <Down> gj
 
+" sudo'ing write
+cmap w!! w !sudo tee % >/dev/null

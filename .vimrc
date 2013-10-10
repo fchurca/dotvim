@@ -51,7 +51,9 @@ endif
 set wrap
 set linebreak
 set wiw=84  " window width. TODO: check if numberwidth+textwidth works somehow
-"set tabstop=4
+set tabstop=4
+set shiftwidth=4
+set shiftround " use multiple of shiftwidth when indenting with '<' and '>'
 
 " Cursor line and column
 set cursorline
