@@ -140,6 +140,7 @@ endif
 "highlight Whitespace gui=underline ctermbg=NONE guibg=NONE ctermfg=darkgrey guifg=darkgrey
 "highlight Whitespace cterm=underline gui=underline ctermbg=NONE guibg=NONE ctermfg=darkgrey guifg=darkgrey
 
+"" Did the author wrap this into a plugin?
 " Search for visual selection
 
 " Escape special characters in a string for exact matching.
