@@ -1,5 +1,5 @@
 vundle
-slimv.vim
+kovisoft/slimv
 paredit.vim
 vcscommand.vim
 kien/rainbow_parentheses.vim
