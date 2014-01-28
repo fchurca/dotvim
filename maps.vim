@@ -13,6 +13,7 @@ nmap <C-h> :nohlsearch<CR>
 " Lazy :
 nnoremap ; :
 nnoremap ñ :
+nnoremap Ñ :
 
 " Scroll over rows instead of lines
 noremap k gk
