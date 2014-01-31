@@ -1,6 +1,29 @@
 #! /bin/sh
 
-ln -s ~/.vim/.vimrc ~
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+VUNDLESRC="https://github.com/gmarik/vundle.git"
+
+DOTVIM="$HOME/.vim"
+VIMRC="$HOME/.vimrc"
+VIMRCOLD="$HOME/.vimrc.old"
+DOTVIMRC="${DOTVIM}/.vimrc"
+echo "Linking ${VIMRC} to ${DOTVIMRC} ..."
+if [ -f "${VIMRC}" ]; then
+	echo "... old ${VIMRC} found!"
+	read -p "Move old ${VIMRC} to ${VIMRCOLD}? (y/N)" yn
+	case $yn in
+		[Yy]*) mv "${VIMRC}" "${VIMRCOLD}"
+			echo "Moved. Although merging .vimrc's is a user responsibility, it is strongly encouraged."
+			echo "linking ...";;
+		*) echo "Arright, aborting!"
+			exit 1;;
+	esac
+fi
+ln -s "${DOTVIMRC}" "${VIMRC}"
+echo "... done!"
+echo "Cloning Vundle using ${VUNDLESRC} ..."
+git clone "${VUNDLESRC}" "${DOTVIM}/bundle/vundle"
+echo "... done!"
+echo "Installing bundles ..."
 vim -c BundleInstall
+echo "... done!"
 

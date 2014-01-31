@@ -1,3 +1,4 @@
 bundle
 .VimballRecord
 .netrwhist
+*.swp
