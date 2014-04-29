@@ -43,13 +43,13 @@ set laststatus=2
 " Avoid automatic linebreaks in new text
 set textwidth=0
 set wrapmargin=0
-if exists("&colorcolumn")
-	set colorcolumn=+2
-endif
-
 " Word wrap
 set wrap
 set linebreak
+
+if exists("&colorcolumn")
+	set colorcolumn=80
+endif
 set wiw=84  " window width. TODO: check if numberwidth+textwidth works somehow
 set tabstop=4
 set shiftwidth=4
