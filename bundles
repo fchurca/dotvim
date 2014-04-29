@@ -1,8 +1,8 @@
 vundle
-kovisoft/slimv
+slimv.vim
 paredit.vim
 vcscommand.vim
-kien/rainbow_parentheses.vim
+rainbow_parentheses.vim
 The-NERD-tree
 The-NERD-Commenter
 quickfixsigns
