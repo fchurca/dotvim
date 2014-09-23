@@ -2,7 +2,6 @@ set nocompatible
 set hidden " Don't unload buffers when abandonded
 set showcmd
 set visualbell
-set nobackup " State-of-the-seventies. See what we can do about swap directory.
 autocmd BufEnter * silent! lcd %:p:h
 
 "" Interface behaviour: input
@@ -68,6 +67,11 @@ set relativenumber
 set list
 set listchars=eol:↵,tab:↹→,trail:\ ,extends:>,precedes:<,nbsp:.
 "match Whitespace / \+/
+
+"" Backups
+set backupdir=~/.vim/backup
+set directory=~/.vim/backup
+set viminfo+=n~/.vim/backup/.vimindo
 
 "" Includes and such
 filetype plugin indent on

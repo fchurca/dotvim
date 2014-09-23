@@ -2,3 +2,4 @@ bundle
 .VimballRecord
 .netrwhist
 *.swp
+backup
