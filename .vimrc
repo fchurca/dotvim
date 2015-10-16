@@ -59,16 +59,17 @@ set cursorline
 "set cursorcolumn
 
 "" Gutter
+set number
 set relativenumber
-"set number
 "set numberwidth=4 " default value
+nnoremap <LEADER>n :set rnu! rnu? <CR>
 
 " Absolute numbering if focus lost
-autocmd FocusLost * :set number
+autocmd FocusLost * :set norelativenumber
 autocmd FocusGained * :set relativenumber
 
 " Absolute numbering if insert mode
-autocmd InsertEnter * :set number
+autocmd InsertEnter * :set norelativenumber
 autocmd InsertLeave * :set relativenumber
 
 
