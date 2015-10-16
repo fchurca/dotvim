@@ -58,10 +58,19 @@ set shiftround " use multiple of shiftwidth when indenting with '<' and '>'
 set cursorline
 "set cursorcolumn
 
-" Gutter
+"" Gutter
 set relativenumber
 "set number
 "set numberwidth=4 " default value
+
+" Absolute numbering if focus lost
+autocmd FocusLost * :set number
+autocmd FocusGained * :set relativenumber
+
+" Absolute numbering if insert mode
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
+
 
 " Special, whitespace and such
 set list
@@ -71,7 +80,7 @@ set listchars=eol:↵,tab:↹→,trail:\ ,extends:>,precedes:<,nbsp:.
 "" Backups
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
-set viminfo+=n~/.vim/backup/.vimindo
+set viminfo+=n~/.vim/backup/.viminfo
 
 "" Includes and such
 filetype plugin indent on
@@ -185,3 +194,4 @@ endfunction
 
 " Start the find and replace command across the entire file
 vmap <leader>z <Esc>:%s/<c-r>=GetVisual()<cr>/
+
