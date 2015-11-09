@@ -94,15 +94,15 @@ if isdirectory($HOME."/.vim")
 	endif
 	" Vundle
 	if isdirectory($HOMEVIM."/bundle")
-		set rtp+=$HOMEVIM/bundle/vundle/
-		call vundle#rc()
+		set rtp+=$HOMEVIM/bundle/Vundle.vim
+		call vundle#begin()
 		let $BUNDLES=$HOMEVIM.'/bundles'
 		if filereadable($BUNDLES)
 			for line in readfile($BUNDLES)
-				Bundle line
+				Plugin line
 			endfor
 		endif
-		"source $HOMEVIM/bundles.vim
+		call vundle#end()
 	endif
 endif
 

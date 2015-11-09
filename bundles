@@ -1,4 +1,4 @@
-vundle
+VundleVim/Vundle.vim
 slimv.vim
 paredit.vim
 vcscommand.vim
