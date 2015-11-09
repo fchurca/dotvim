@@ -2,7 +2,7 @@
 nmap <F10> :emenu <C-Z>
 
 " Control buffers
-"nmap <C-l> :TBEMinimal<CR>
+nmap <C-b> :BufExplorerVerticalSplit<CR>
 nmap <C-j> :bprev<CR>
 nmap <C-k> :bnext<CR>
 
@@ -23,3 +23,7 @@ noremap <Down> gj
 
 " sudo'ing write
 cmap w!! w !sudo tee % >/dev/null
+
+" Indent EVERYTHING
+nmap <Leader>= gg=G<C-O><C-O>
+
