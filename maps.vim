@@ -27,3 +27,7 @@ cmap w!! w !sudo tee % >/dev/null
 " Indent EVERYTHING
 nmap <Leader>= gg=G<C-O><C-O>
 
+" CtrlP
+" We already have NerdTREE for files
+nmap <C-p> :CtrlPBuffer<CR>
+

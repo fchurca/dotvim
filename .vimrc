@@ -87,22 +87,24 @@ set viminfo+=n~/.vim/backup/.viminfo
 filetype plugin indent on
 syntax on
 
-if isdirectory($HOME."/.vim")
-	let $HOMEVIM=$HOME."/.vim"
-	if filereadable($HOMEVIM."/maps.vim")
-		source $HOMEVIM/maps.vim
-	endif
+let $VIMHOME=($HOME."/.vim")
+if isdirectory($VIMHOME)
 	" Vundle
-	if isdirectory($HOMEVIM."/bundle")
-		set rtp+=$HOMEVIM/bundle/Vundle.vim
+	if isdirectory($VIMHOME."/bundle")
+		set rtp+=$VIMHOME/bundle/Vundle.vim
 		call vundle#begin()
-		let $BUNDLES=$HOMEVIM.'/bundles'
+		let $BUNDLES=$VIMHOME.'/bundles'
 		if filereadable($BUNDLES)
 			for line in readfile($BUNDLES)
 				Plugin line
 			endfor
 		endif
 		call vundle#end()
+	endif
+	" maps
+	let $MAPSFILE=($VIMHOME."/maps.vim")
+	if filereadable($MAPSFILE)
+		source $MAPSFILE
 	endif
 endif
 
