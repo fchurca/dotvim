@@ -1,6 +1,6 @@
 #! /bin/sh
 
-VUNDLESRC="https://github.com/gmarik/vundle.git"
+VUNDLESRC="https://github.com/VundleVim/Vundle.vim.git"
 
 DOTVIM="$HOME/.vim"
 VIMRC="$HOME/.vimrc"
@@ -21,9 +21,9 @@ fi
 ln -s "${DOTVIMRC}" "${VIMRC}"
 echo "... done!"
 echo "Cloning Vundle using ${VUNDLESRC} ..."
-git clone "${VUNDLESRC}" "${DOTVIM}/bundle/vundle"
+git clone "${VUNDLESRC}" "${DOTVIM}/bundle/Vundle.vim"
 echo "... done!"
 echo "Installing bundles ..."
-vim -c BundleInstall
+vim -c VundleInstall
 echo "... done!"
 
