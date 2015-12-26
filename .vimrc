@@ -26,8 +26,8 @@ set confirm " On abandoning buffer, Vim will ask whether to save changes
 
 " SuperTab
 let g:SuperTabDefaultCompletionType = "context"
-let g:SuperTabMappingForward = '<c-space>'
-let g:SuperTabMappingBackward = '<s-c-space>'
+let g:SuperTabMappingForward = '<Tab>'
+let g:SuperTabMappingBackward = '<S-Tab>'
 
 "" Interface behaviour: output
 "set scrolloff=3

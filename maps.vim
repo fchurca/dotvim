@@ -2,7 +2,7 @@
 nmap <F10> :emenu <C-Z>
 
 " Control buffers
-nmap <C-b> :BufExplorerVerticalSplit<CR>
+nmap <Leader>b :BufExplorerVerticalSplit<CR>
 nmap <C-j> :bprev<CR>
 nmap <C-k> :bnext<CR>
 
