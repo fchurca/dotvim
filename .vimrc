@@ -9,6 +9,10 @@ set mouse=n
 set clipboard=unnamed " selection (register *)
 "set clipboard=unnamedplus " cut buffer (register +)
 
+" Encodings
+set encoding=utf-8
+set termencoding=utf-8
+
 let mapleader = ","
 
 " Menu
