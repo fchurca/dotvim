@@ -136,25 +136,26 @@ let g:rbpt_colorpairs = [
 			\ ['red',         'firebrick3'],
 			\ ]
 "
-"" Pretty colours (centralize elsewhere? try to use standards?)
 if $USER != 'root'
+	colorscheme torte
 	if exists("&colorcolumn")
 		highlight ColorColumn ctermbg=darkblue guibg=grey
 	endif
 	highlight clear CursorLine
 	highlight CursorLineNr ctermbg=cyan ctermfg=white
 	highlight LineNr guibg=darkgrey ctermbg=darkblue ctermfg=white
-	highlight SpecialKey ctermfg=darkgrey
-	highlight StatusLine ctermbg=white ctermfg=lightblue
+"	highlight SpecialKey ctermfg=darkgrey
+"	highlight StatusLine ctermbg=white ctermfg=lightblue
 else
+	colorscheme zellner
 	if exists("&colorcolumn")
 		highlight ColorColumn ctermbg=darkred guibg=grey
 	endif
 	highlight clear CursorLine
-	highlight CursorLineNr ctermbg=red ctermfg=white
+	highlight CursorLineNr ctermbg=black ctermfg=red
 	highlight LineNr guibg=darkgrey ctermbg=red ctermfg=black
-	highlight SpecialKey ctermfg=darkgrey
-	highlight StatusLine ctermbg=white ctermfg=darkred
+"	highlight SpecialKey ctermfg=darkgrey
+"	highlight StatusLine ctermbg=white ctermfg=darkred
 endif
 "autocmd ColorScheme * highlight Whitespace gui=underline ctermbg=NONE guibg=NONE ctermfg=darkgrey guifg=darkgrey
 "highlight Whitespace gui=underline ctermbg=NONE guibg=NONE ctermfg=darkgrey guifg=darkgrey
