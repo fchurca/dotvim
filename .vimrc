@@ -51,7 +51,7 @@ set wrap
 set linebreak
 
 if exists("&colorcolumn")
-	set colorcolumn=80
+	set colorcolumn=100
 endif
 set wiw=84  " window width. TODO: check if numberwidth+textwidth works somehow
 set tabstop=4
